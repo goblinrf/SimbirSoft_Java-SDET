@@ -1,8 +1,0 @@
-target/
-bin/
-.idea/
-*.iml
-*/*.iml
-./*.iml
-./Servers/
-*.log
