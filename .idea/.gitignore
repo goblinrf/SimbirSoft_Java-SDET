@@ -6,4 +6,3 @@ bin/
 ./*.iml
 ./Servers/
 *.log
-allure-results/
