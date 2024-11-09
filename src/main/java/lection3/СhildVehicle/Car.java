@@ -1,14 +1,14 @@
-package lection1.СhildVehicle;
+package lection3.СhildVehicle;
 
-import lection1.AbstractClass.Vehicle;
-import lection1.Interface.Drivable;
+import lection3.AbstractClass.Vehicle;
+import lection3.Interface.Vehicle.Drivable;
 
-public class Car extends Vehicle implements Drivable {
+public class Car<T> extends Vehicle implements Drivable {
     private int passengerCapacity;
     private boolean engineRunning;
     private int currentPassenger;
 
-    public Car(String brand, String model, int year, int passengerCapacity) {
+    public Car(String brand, T model, int year, int passengerCapacity) {
         super(brand, model, year);
         this.passengerCapacity = passengerCapacity;
         this.engineRunning = false;

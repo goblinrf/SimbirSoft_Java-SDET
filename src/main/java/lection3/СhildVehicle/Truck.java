@@ -1,12 +1,12 @@
-package lection1.СhildVehicle;
+package lection3.СhildVehicle;
 
-import lection1.AbstractClass.Vehicle;
-import lection1.Interface.Drivable;
-import lection1.Interface.Loadable;
+import lection3.AbstractClass.Vehicle;
+import lection3.Interface.Vehicle.Drivable;
+import lection3.Interface.Vehicle.Loadable;
 
 public class Truck extends Vehicle implements Drivable, Loadable {
     private int loadCapacity;
-    private int currentLoad;
+    private double currentLoad;
     private boolean engineRunning;
 
     public Truck(String brand, String model, int year, int loadCapacity) {
@@ -37,9 +37,9 @@ public class Truck extends Vehicle implements Drivable, Loadable {
     }
 
     @Override
-    public void load(int weight) {
-        if (currentLoad + weight <= loadCapacity) {
-            currentLoad += weight;
+    public <T extends Number> void load(T weight) {
+        if (currentLoad + weight.doubleValue() <= loadCapacity) {
+            currentLoad += weight.doubleValue();
             System.out.println(weight + " kg loaded. Current load: " + currentLoad + " kg.");
         } else {
             System.out.println("Cannot load " + weight + " kg. Over capacity!");

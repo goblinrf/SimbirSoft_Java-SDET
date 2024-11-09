@@ -1,13 +1,13 @@
-package lection1.AbstractClass;
+package lection3.AbstractClass;
 
-public abstract class Vehicle {
+public abstract class Vehicle<T> {
     private String brand;
-    private String model;
+    private T model;
     private int year;
 
     private static int vehicleCount = 0;
 
-    public Vehicle(String brand, String model, int year) {
+    public Vehicle(String brand, T model, int year) {
         this.brand = brand;
         this.model = model;
         this.year = year;
@@ -22,15 +22,19 @@ public abstract class Vehicle {
         return brand;
     }
 
+    public void ShowType() {
+        System.out.println("Тип T " + model.getClass().getName());
+    }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
-    public String getModel() {
+    public T getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(T model) {
         this.model = model;
     }
 
